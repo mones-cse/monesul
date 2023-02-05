@@ -6,6 +6,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  let isSidebarOpen = true
+    ? 'bg-white absolute w-full border-r border-gray-200 '
+    : 'hidden ';
   return (
     <html lang='en'>
       {/*
@@ -16,9 +19,7 @@ export default function RootLayout({
       <body className={'flex bg-gray-700'}>
         <div
           className={
-            'hidden bg-white border-r border-gray-150 ' +
-            'lg:block lg:w-56 lg:bg-gray-50 ' +
-            '2xl:w-72'
+            isSidebarOpen + 'lg:block lg:bg-gray-50 lg:w-56 ' + '2xl:w-72'
           }
         >
           <Sidebar />
